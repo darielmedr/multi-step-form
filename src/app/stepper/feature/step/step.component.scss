@@ -1,0 +1,43 @@
+$gap: 2rem;
+$bannerSize: 4rem;
+$bannerFontSize: 0.5 * $bannerSize;
+
+.step {
+  width: max(30rem, 100%);
+  display: flex;
+  align-items: center;
+  gap: $gap;
+
+  &.active > .banner {
+    color: var(--color-primary-marine-blue);
+    background-color: var(--color-primary-pastel-blue);
+    border: none;
+  }
+
+  .banner {
+    width: $bannerSize;
+    height: $bannerSize;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    line-height: 0;
+    font-size: $bannerFontSize;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-neutral-white);
+    border: solid 1px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.3 * $gap);
+    .description {
+      color: var(--color-neutral-cool-gray);
+    }
+
+    .title {
+      color: var(--color-neutral-white);
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}

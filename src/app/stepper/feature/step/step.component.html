@@ -1,0 +1,12 @@
+<a
+  class="step"
+  [routerLink]="[step.path]"
+  routerLinkActive="active"
+  (click)="selected.emit(step.path)"
+>
+  <div class="banner">{{ step.step }}</div>
+  <div class="info">
+    <p class="description">{{ step.description | uppercase }}</p>
+    <p class="title">{{ step.title | uppercase }}</p>
+  </div>
+</a>
