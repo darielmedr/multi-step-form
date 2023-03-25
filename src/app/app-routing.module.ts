@@ -15,6 +15,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'select-plan',
+    loadChildren: () =>
+      import('./select-plan/select-plan.module').then(
+        (m) => m.SelectPlanModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'personal-info',
     pathMatch: 'full',
