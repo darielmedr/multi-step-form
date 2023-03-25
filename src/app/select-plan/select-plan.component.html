@@ -11,5 +11,6 @@
 </section>
 
 <app-frequency-selector
+  [initialValue]="(paymentFrequency$ | async) ?? 'monthly'"
   (selected)="selectPaymentFrequency($event)"
 ></app-frequency-selector>
