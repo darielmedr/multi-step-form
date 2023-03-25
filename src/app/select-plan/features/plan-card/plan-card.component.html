@@ -1,7 +1,7 @@
 <button
   class="card"
-  [ngClass]="{ selected: isSlected }"
-  (click)="selected.emit(plan.name)"
+  [ngClass]="{ selected: isSelected }"
+  (click)="selected.emit(plan)"
 >
   <img [src]="plan.logo" [alt]="plan.name" class="logo" />
   <div class="info">

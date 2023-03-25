@@ -13,7 +13,7 @@ import { PaymentFrequency } from './models/payment-frequency.model';
 export class SelectPlanComponent implements OnInit {
   public plans$: Observable<Plan[]> = new Observable();
 
-  public selectedPlan$: Subject<string> = new Subject();
+  public selectedPlan$: Subject<Plan> = new Subject();
   public paymentFrequency$: BehaviorSubject<PaymentFrequency> =
     new BehaviorSubject<PaymentFrequency>('monthly');
 
@@ -26,8 +26,8 @@ export class SelectPlanComponent implements OnInit {
     this.plans$ = this.planSelectionService.getPlans();
   }
 
-  public selectPlan(planName: string): void {
-    this.selectedPlan$.next(planName);
+  public selectPlan(plan: Plan): void {
+    this.selectedPlan$.next(plan);
   }
 
   public selectPaymentFrequency(paymentFrequency: PaymentFrequency): void {

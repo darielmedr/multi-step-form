@@ -6,7 +6,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { Plan } from '../../models/plan.model';
+import { DEFAULT_PLAN_VALUE, Plan } from '../../models/plan.model';
 
 @Component({
   selector: 'app-plan-card',
@@ -15,16 +15,11 @@ import { Plan } from '../../models/plan.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlanCardComponent {
-  @Input() isSlected = false;
+  @Input() isSelected = false;
   @Input() paymentFrequency: PaymentFrequency = 'monthly';
-  @Input() plan: Plan = {
-    name: '',
-    price: 0,
-    logo: '',
-    discountInfo: '',
-  };
+  @Input() plan: Plan = DEFAULT_PLAN_VALUE;
 
-  @Output() selected: EventEmitter<string> = new EventEmitter();
+  @Output() selected: EventEmitter<Plan> = new EventEmitter();
 
   public shouldShowDiscountInfo(): boolean {
     return (
