@@ -22,6 +22,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'addons',
+    loadChildren: () =>
+      import('./addons/addons.module').then((m) => m.AddonsModule),
+  },
+  {
     path: '**',
     redirectTo: 'personal-info',
     pathMatch: 'full',
