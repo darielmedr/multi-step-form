@@ -9,12 +9,13 @@ export class PricePipe implements PipeTransform {
     monthly: 'mo',
     yearly: 'yr',
   };
+  private readonly currencySymbol = '$';
 
   transform(price: number, paymentFrequency: PaymentFrequency): string {
     const finalPrice = this.calculatePrice(price, paymentFrequency);
     const frequencyText = this.frequencyMap[paymentFrequency];
 
-    return `${finalPrice}/${frequencyText}`;
+    return `${this.currencySymbol}${finalPrice}/${frequencyText}`;
   }
 
   private calculatePrice(
