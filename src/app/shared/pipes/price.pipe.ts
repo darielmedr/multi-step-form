@@ -1,8 +1,9 @@
-import { PaymentFrequency } from './../models/payment-frequency.model';
 import { Pipe, PipeTransform } from '@angular/core';
+import { PaymentFrequency } from 'src/app/select-plan/models/payment-frequency.model';
 
 @Pipe({
   name: 'price',
+  standalone: true,
 })
 export class PricePipe implements PipeTransform {
   private readonly frequencyMap: Record<PaymentFrequency, string> = {
