@@ -33,4 +33,8 @@ export class SelectPlanComponent implements OnInit {
   public selectPaymentFrequency(paymentFrequency: PaymentFrequency): void {
     this.planSelectionService.selectPaymentFrequency(paymentFrequency);
   }
+
+  public trackByFn(_: number, value: Plan): number {
+    return value.id;
+  }
 }

@@ -2,7 +2,7 @@
 
 <section class="plans">
   <app-plan-card
-    *ngFor="let plan of plans$ | async"
+    *ngFor="let plan of plans$ | async; trackBy: trackByFn"
     [plan]="plan"
     [isSelected]="(selectedPlan$ | async)?.name === plan.name"
     [paymentFrequency]="(paymentFrequency$ | async) ?? 'monthly'"

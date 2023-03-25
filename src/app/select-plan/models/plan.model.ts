@@ -1,4 +1,5 @@
 export interface Plan {
+  id: number;
   name: string;
   price: number;
   logo: string;
@@ -6,6 +7,7 @@ export interface Plan {
 }
 
 export const DEFAULT_PLAN_VALUE: Plan = {
+  id: 0,
   name: '',
   price: 0,
   logo: '',

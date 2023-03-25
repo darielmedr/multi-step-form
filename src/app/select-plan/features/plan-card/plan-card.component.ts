@@ -1,4 +1,3 @@
-import { PaymentFrequency } from './../../models/payment-frequency.model';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -6,6 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { PaymentFrequency } from '../../models/payment-frequency.model';
 import { DEFAULT_PLAN_VALUE, Plan } from '../../models/plan.model';
 
 @Component({
