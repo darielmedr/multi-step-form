@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { PaymentFrequency } from '../models/payment-frequency.model';
 import { Plan } from '../models/plan.model';
 
 @Injectable({
@@ -27,7 +28,24 @@ export class PlanSelectionService {
     },
   ];
 
+  private selectedPlan$ = new BehaviorSubject<Plan>(this.plans[0]);
+  private paymentFrequency$ = new BehaviorSubject<PaymentFrequency>('monthly');
+
   public getPlans(): Observable<Plan[]> {
     return of(this.plans);
+  }
+
+  public getSelectedPlan(): Observable<Plan> {
+    return this.selectedPlan$.asObservable();
+  }
+  public selectPlan(plan: Plan): void {
+    return this.selectedPlan$.next(plan);
+  }
+
+  public getPaymentFrequency(): Observable<PaymentFrequency> {
+    return this.paymentFrequency$.asObservable();
+  }
+  public selectPaymentFrequency(paymentFrequency: PaymentFrequency): void {
+    return this.paymentFrequency$.next(paymentFrequency);
   }
 }
