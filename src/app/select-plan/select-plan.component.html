@@ -4,7 +4,7 @@
   <app-plan-card
     *ngFor="let plan of plans$ | async"
     [plan]="plan"
-    [isSlected]="(selectedPlan$ | async) === plan.name"
+    [isSelected]="(selectedPlan$ | async)?.name === plan.name"
     [paymentFrequency]="(paymentFrequency$ | async) ?? 'monthly'"
     (selected)="selectPlan($event)"
   ></app-plan-card>
