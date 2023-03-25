@@ -1,0 +1,15 @@
+<app-heading [title]="title" [description]="description"></app-heading>
+
+<section class="plans">
+  <app-plan-card
+    *ngFor="let plan of plans$ | async"
+    [plan]="plan"
+    [isSlected]="(selectedPlan$ | async) === plan.name"
+    [paymentFrequency]="(paymentFrequency$ | async) ?? 'monthly'"
+    (selected)="selectPlan($event)"
+  ></app-plan-card>
+</section>
+
+<app-frequency-selector
+  (selected)="selectPaymentFrequency($event)"
+></app-frequency-selector>

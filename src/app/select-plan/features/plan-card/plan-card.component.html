@@ -1,0 +1,14 @@
+<button
+  class="card"
+  [ngClass]="{ selected: isSlected }"
+  (click)="selected.emit(plan.name)"
+>
+  <img [src]="plan.logo" [alt]="plan.name" class="logo" />
+  <div class="info">
+    <p class="plan-name">{{ plan.name }}</p>
+    <p class="price">{{ plan.price | price : paymentFrequency }}</p>
+    <p *ngIf="shouldShowDiscountInfo()" class="discountInfo">
+      {{ plan.discountInfo }}s
+    </p>
+  </div>
+</button>

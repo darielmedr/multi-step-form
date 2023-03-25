@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <button
+    [ngClass]="{ active: switchState === 'left' }"
+    (click)="setState('left')"
+  >
+    Monthly
+  </button>
+  <div class="switch">
+    <div class="switch-indicator" [ngClass]="switchState"></div>
+  </div>
+  <button
+    [ngClass]="{ active: switchState === 'right' }"
+    (click)="setState('right')"
+  >
+    Yearly
+  </button>
+</div>

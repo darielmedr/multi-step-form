@@ -1,0 +1,52 @@
+$gap: 0.3rem;
+$logoSize: 6rem;
+$cardWidth: 20rem;
+$cardSpacing: 0.125 * $cardWidth;
+$cardBorderRadius: 8px;
+
+button {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: $cardWidth;
+  height: calc(1.2 * $cardWidth);
+  padding: $cardSpacing;
+  border: solid var(--color-neutral-cool-gray) 1px;
+  border-radius: $cardBorderRadius;
+
+  &.selected {
+    border-color: var(--color-primary-marine-blue);
+    border-width: 2px;
+  }
+
+  .logo {
+    width: $logoSize;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    color: var(--color-primary-marine-blue);
+
+    .plan-name {
+      font-weight: var(--font-weight-bold);
+      font-size: 1.5em;
+    }
+
+    .price {
+      color: var(--color-neutral-cool-gray);
+      font-size: 1.2em;
+    }
+
+    .discountInfo {
+      font-size: 0.9em;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+$gap: 4rem;
+$switchInicatorScale: 1.5;
+$switchInicatorSize: 1.7rem;
+$switchInicatorPadding: 0.36rem;
+$switchHeight: $switchInicatorSize + 2 * $switchInicatorPadding;
+$switchWidth: ($switchInicatorScale + 1) * $switchInicatorSize + 2 *
+  $switchInicatorPadding;
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+
+  border-radius: 8px;
+  color: var(--color-neutral-cool-gray);
+  background-color: var(--color-neutral-magnolia);
+
+  button {
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    padding: calc(0.5 * $gap);
+    font-weight: var(--font-weight-bold);
+
+    &.active {
+      color: var(--color-primary-marine-blue);
+    }
+  }
+
+  .switch {
+    position: relative;
+    width: $switchWidth;
+    height: $switchHeight;
+    background-color: var(--color-primary-marine-blue);
+    border-radius: $switchHeight;
+
+    &-indicator {
+      position: absolute;
+      top: $switchInicatorPadding;
+      left: $switchInicatorPadding;
+      width: $switchInicatorSize;
+      height: $switchInicatorSize;
+      border-radius: 50%;
+      background-color: var(--color-neutral-white);
+      transition: transform 0.5s ease-in-out;
+
+      &.right {
+        transform: translateX($switchInicatorScale * 100%);
+      }
+    }
+  }
+}
