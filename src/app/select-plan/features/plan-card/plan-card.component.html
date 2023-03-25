@@ -8,7 +8,7 @@
     <p class="plan-name">{{ plan.name }}</p>
     <p class="price">{{ plan.price | price : paymentFrequency }}</p>
     <p *ngIf="shouldShowDiscountInfo()" class="discountInfo">
-      {{ plan.discountInfo }}s
+      {{ plan.discountInfo }}
     </p>
   </div>
 </button>
