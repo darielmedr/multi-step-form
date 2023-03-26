@@ -3,6 +3,7 @@ import {
   BehaviorSubject,
   EMPTY,
   first,
+  map,
   Observable,
   of,
   switchMap,
@@ -70,6 +71,12 @@ export class AddonService {
       this.addonsState.set(addon.id, addon);
       this.emitAddons(this.getCurrentAddonsState());
     }
+  }
+
+  public getSelectedAddons(): Observable<Addon[]> {
+    return this.addons$
+      .asObservable()
+      .pipe(map((addons) => addons.filter((addon) => addon.isSelected)));
   }
 
   private disableFetch(): void {
