@@ -17,8 +17,6 @@ export class AddonsComponent implements OnInit {
   public title = 'Pick add-ons';
   public description = 'Add-ons help enhance your gaming experience.';
 
-  private selectedAddons: Map<string, Addon> = new Map();
-
   constructor(
     private addonService: AddonService,
     private planSelectionService: PlanSelectionService
@@ -27,21 +25,15 @@ export class AddonsComponent implements OnInit {
   ngOnInit(): void {
     this.addons$ = this.addonService.getAddons();
     this.paymentFrequency$ = this.planSelectionService.getPaymentFrequency();
+
+    this.addonService.fetchAddons().subscribe();
   }
 
   public trackByFn(_: number, value: Addon): number {
     return value.id;
   }
 
-  public updateSelectedAddons(addon: Addon): void {
-    addon.isSelected
-      ? this.selectedAddons.set(addon.name, addon)
-      : this.selectedAddons.delete(addon.name);
-
-    this.addonService.selectAddons(this.getSelectedAddons());
-  }
-
-  private getSelectedAddons(): Addon[] {
-    return Array.from(this.selectedAddons.values());
+  public updateAddonsState(addon: Addon): void {
+    this.addonService.updateAddonsState(addon);
   }
 }
