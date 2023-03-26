@@ -1,0 +1,7 @@
+<div class="plan">
+  <div class="info">
+    <p class="name">{{ plan.name }} ({{ paymentFrequency | titlecase }})</p>
+    <button class="action" (click)="changed.emit()">Change</button>
+  </div>
+  <p class="price">{{ plan.price | price : paymentFrequency }}</p>
+</div>

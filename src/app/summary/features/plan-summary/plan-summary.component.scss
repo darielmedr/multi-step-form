@@ -1,0 +1,33 @@
+.plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-primary-marine-blue);
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .name {
+      font-size: 1.2em;
+      font-weight: var(--font-weight-medium);
+    }
+
+    button {
+      box-sizing: border-box;
+      font-family: var(--font-family);
+      cursor: pointer;
+    }
+
+    .action {
+      color: var(--color-neutral-cool-gray);
+      text-decoration: underline;
+    }
+  }
+
+  .price {
+    font-size: 1.2em;
+    font-weight: var(--font-weight-bold);
+  }
+}
