@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { PaymentFrequency } from 'src/app/select-plan/models/payment-frequency.model';
 import {
   DEFAULT_PLAN_VALUE,
@@ -9,6 +15,7 @@ import {
   selector: 'app-plan-summary',
   templateUrl: './plan-summary.component.html',
   styleUrls: ['./plan-summary.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlanSummaryComponent {
   @Input() plan: Plan = DEFAULT_PLAN_VALUE;
