@@ -27,6 +27,11 @@ const routes: Routes = [
       import('./addons/addons.module').then((m) => m.AddonsModule),
   },
   {
+    path: 'summary',
+    loadChildren: () =>
+      import('./summary/summary.module').then((m) => m.SummaryModule),
+  },
+  {
     path: '**',
     redirectTo: 'personal-info',
     pathMatch: 'full',
