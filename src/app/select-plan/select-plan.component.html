@@ -1,16 +1,18 @@
 <app-heading [title]="title" [description]="description"></app-heading>
 
-<section class="plans">
-  <app-plan-card
-    *ngFor="let plan of plans$ | async; trackBy: trackByFn"
-    [plan]="plan"
-    [isSelected]="(selectedPlan$ | async)?.name === plan.name"
-    [paymentFrequency]="(paymentFrequency$ | async) ?? 'monthly'"
-    (selected)="selectPlan($event)"
-  ></app-plan-card>
-</section>
+<ng-container *ngIf="paymentFrequency$ | async as paymentFrequency">
+  <section class="plans">
+    <app-plan-card
+      *ngFor="let plan of plans$ | async; trackBy: trackByFn"
+      [plan]="plan"
+      [isSelected]="(selectedPlan$ | async)?.name === plan.name"
+      [paymentFrequency]="paymentFrequency"
+      (selected)="selectPlan($event)"
+    ></app-plan-card>
+  </section>
 
-<app-frequency-selector
-  [initialValue]="(paymentFrequency$ | async) ?? 'monthly'"
-  (selected)="selectPaymentFrequency($event)"
-></app-frequency-selector>
+  <app-frequency-selector
+    [initialValue]="paymentFrequency"
+    (selected)="selectPaymentFrequency($event)"
+  ></app-frequency-selector>
+</ng-container>
