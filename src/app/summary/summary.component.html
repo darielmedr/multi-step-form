@@ -1,1 +1,25 @@
-<p>summary works!</p>
+<app-heading [title]="title" [description]="description"></app-heading>
+
+<section *ngIf="paymentFrequency$ | async as paymentFrequency">
+  <div class="summary">
+    <app-plan-summary
+      *ngIf="selectedPlan$ | async as selectedPlan"
+      [plan]="selectedPlan"
+      [paymentFrequency]="paymentFrequency"
+      (changed)="changePlan()"
+    ></app-plan-summary>
+
+    <div class="separator"></div>
+
+    <app-addon-summary
+      *ngFor="let addon of selectedAddons$ | async; trackBy: trackByFn"
+      [addon]="addon"
+      [paymentFrequency]="paymentFrequency"
+    ></app-addon-summary>
+  </div>
+
+  <app-addons-total-price
+    [totalPrice]="(addonsTotalPrice$ | async) ?? 0"
+    [paymentFrequency]="paymentFrequency"
+  ></app-addons-total-price>
+</section>
