@@ -10,6 +10,7 @@ import {
   MatFormFieldModule,
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
 } from '@angular/material/form-field';
+import { HeadingModule } from 'src/app/shared/components/heading/heading.module';
 
 @NgModule({
   declarations: [PersonalInfoComponent],
@@ -25,6 +26,7 @@ import {
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    HeadingModule,
   ],
 })
 export class PersonalInfoModule {}

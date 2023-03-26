@@ -7,7 +7,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./personal-info.component.scss'],
 })
 export class PersonalInfoComponent implements OnInit {
-  personalInfoForm: FormGroup = new FormGroup({});
+  public title = 'Personal info';
+  public description =
+    'Please provide your name, email address, and phone number.';
+
+  public personalInfoForm: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder) {}
 
