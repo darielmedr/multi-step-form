@@ -1,1 +1,10 @@
-<p>addons works!</p>
+<app-heading [title]="title" [description]="description"></app-heading>
+
+<section class="addons">
+  <app-addon
+    *ngFor="let addon of addons$ | async; let i = index; trackBy: trackByFn"
+    [addon]="addon"
+    [paymentFrequency]="(paymentFrequency$ | async) ?? 'monthly'"
+    (changed)="updateSelectedAddons($event)"
+  ></app-addon>
+</section>

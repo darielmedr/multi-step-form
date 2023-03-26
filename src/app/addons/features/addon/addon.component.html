@@ -1,0 +1,14 @@
+<label class="addon" [ngClass]="{ selected: addon.isSelected }">
+  <input
+    type="checkbox"
+    [checked]="addon.isSelected"
+    (change)="change($event.target)"
+  />
+  <div class="info">
+    <div class="text">
+      <p class="name">{{ addon.name }}</p>
+      <p class="description">{{ addon.description }}</p>
+    </div>
+    <p class="price">+{{ addon.price | price : paymentFrequency }}</p>
+  </div>
+</label>

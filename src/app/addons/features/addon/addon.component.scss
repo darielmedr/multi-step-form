@@ -1,0 +1,52 @@
+$gap: 3rem;
+$borderRadius: 8px;
+$checkboxScale: 2;
+
+.addon {
+  display: flex;
+  gap: $gap;
+  padding: $gap;
+  border: solid var(--color-neutral-cool-gray) 2px;
+  border-radius: $borderRadius;
+  color: var(--color-neutral-cool-gray);
+
+  &.selected {
+    border-color: var(--color-primary-marine-blue);
+  }
+
+  input[type="checkbox"] {
+    -ms-transform: scale($checkboxScale); /* IE */
+    -moz-transform: scale($checkboxScale); /* FF */
+    -webkit-transform: scale($checkboxScale); /* Safari and Chrome */
+    -o-transform: scale($checkboxScale); /* Opera */
+    transform: scale($checkboxScale);
+    padding: 10px;
+  }
+
+  .info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: calc(0.2 * $gap);
+
+      .name {
+        font-size: 1.2em;
+        font-weight: var(--font-weight-medium);
+        color: var(--color-primary-marine-blue);
+      }
+
+      .description {
+        color: var(--color-neutral-cool-gray);
+      }
+    }
+  }
+
+  .price {
+    color: var(--color-primary-purplish-blue);
+  }
+}
