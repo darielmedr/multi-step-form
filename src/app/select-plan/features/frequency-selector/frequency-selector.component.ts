@@ -36,7 +36,7 @@ export class FrequencySelectorComponent implements OnInit {
     ];
   }
 
-  setState(state: SwitchSelectorState): void {
+  public setState(state: SwitchSelectorState): void {
     this.switchState = state;
 
     const paymentFrequency = this.switchStateMap[state];

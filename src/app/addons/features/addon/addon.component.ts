@@ -20,7 +20,7 @@ export class AddonComponent {
 
   @Output() changed: EventEmitter<Addon> = new EventEmitter();
 
-  change(target: EventTarget | null) {
+  public change(target: EventTarget | null): void {
     const isSelected = this.isHtmlInputElement(target) ? target.checked : false;
 
     this.addon = {
