@@ -1,0 +1,7 @@
+<div class="addon-total-price">
+  <p class="name">Total ({{ paymentFrequencyText }})</p>
+  <p class="price">
+    <span *ngIf="isMonthlyPayment">+</span
+    >{{ totalPrice | price : paymentFrequency }}
+  </p>
+</div>

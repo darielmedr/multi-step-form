@@ -1,0 +1,15 @@
+$spacing: 3rem;
+
+.addon-total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-neutral-cool-gray);
+  padding: calc(1.2 * $spacing) $spacing;
+
+  .price {
+    font-size: 1.4em;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-purplish-blue);
+  }
+}
