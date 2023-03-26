@@ -17,12 +17,11 @@ button {
   width: $cardWidth;
   height: calc(1.2 * $cardWidth);
   padding: $cardSpacing;
-  border: solid var(--color-neutral-cool-gray) 1px;
+  border: solid var(--color-neutral-cool-gray) 2px;
   border-radius: $cardBorderRadius;
 
   &.selected {
     border-color: var(--color-primary-marine-blue);
-    border-width: 2px;
   }
 
   .logo {
