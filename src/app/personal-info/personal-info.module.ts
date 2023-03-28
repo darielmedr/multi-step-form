@@ -11,6 +11,7 @@ import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
 } from '@angular/material/form-field';
 import { HeadingModule } from 'src/app/shared/components/heading/heading.module';
+import { InputTextModule } from './features/input-text/input-text.module';
 
 @NgModule({
   declarations: [PersonalInfoComponent],
@@ -27,6 +28,7 @@ import { HeadingModule } from 'src/app/shared/components/heading/heading.module'
     MatFormFieldModule,
     MatInputModule,
     HeadingModule,
+    InputTextModule,
   ],
 })
 export class PersonalInfoModule {}

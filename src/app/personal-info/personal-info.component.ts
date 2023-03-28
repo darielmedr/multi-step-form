@@ -19,7 +19,10 @@ export class PersonalInfoComponent implements OnInit {
     this.personalInfoForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern('[0-9]{8}$')]],
+      phone: [
+        '',
+        [Validators.required, Validators.pattern(/^\+?[0-9]{8,11}$/)],
+      ],
     });
   }
 }
