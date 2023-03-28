@@ -1,0 +1,36 @@
+$gap: 0.7rem;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+
+    .error {
+      font-weight: var(--font-weight-medium);
+      color: var(--color-primary-strawberry-red);
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: var(--card-border-radius);
+    border: none;
+    outline: solid 1.5px var(--color-neutral-cool-gray);
+
+    &:focus-visible {
+      outline-color: var(--color-primary-marine-blue);
+      outline-width: 2px;
+    }
+
+    &.invalid {
+      outline-color: var(--color-primary-strawberry-red);
+      outline-width: 2px;
+    }
+  }
+}

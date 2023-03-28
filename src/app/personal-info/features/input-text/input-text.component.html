@@ -1,0 +1,17 @@
+<label class="wrapper">
+  <div class="info">
+    <p class="label">{{ label }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </div>
+
+  <input
+    appInvalid
+    [class.invalid]="isInvalid"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="writeValue($event.target)"
+    (blur)="onBlur()"
+  />
+</label>
