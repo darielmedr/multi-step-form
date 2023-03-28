@@ -6,6 +6,7 @@ import {
   Output,
 } from '@angular/core';
 import { PaymentFrequency } from 'src/app/select-plan/models/payment-frequency.model';
+import { isHtmlInputElement } from 'src/app/shared/utils/html-guards';
 import { Addon, DEFAULT_ADDON_VALUE } from '../../models/addon.model';
 
 @Component({
@@ -21,18 +22,12 @@ export class AddonComponent {
   @Output() changed: EventEmitter<Addon> = new EventEmitter();
 
   public change(target: EventTarget | null): void {
-    const isSelected = this.isHtmlInputElement(target) ? target.checked : false;
+    const isSelected = isHtmlInputElement(target) ? target.checked : false;
 
     this.addon = {
       ...this.addon,
       isSelected,
     };
     this.changed.emit(this.addon);
-  }
-
-  private isHtmlInputElement(
-    target: EventTarget | null
-  ): target is HTMLInputElement {
-    return target instanceof HTMLInputElement;
   }
 }
