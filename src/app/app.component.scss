@@ -6,21 +6,29 @@
     "stepper content"
     "stepper content"
     "stepper actions";
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 40rem 1fr;
   gap: 20px;
   overflow: hidden;
 
   app-stepper {
     grid-area: stepper;
+    padding: 2rem;
   }
 
   main {
     grid-area: content;
-    padding: 5rem;
-    width: min(100%, 75rem);
+    @extend .content;
   }
 
-  .actions {
+  app-navigation-actions {
     grid-area: actions;
+    align-self: flex-end;
+    @extend .content;
   }
+}
+
+.content {
+  margin: 0 auto;
+  padding: 5rem;
+  width: clamp(45rem, 100%, 75rem);
 }
