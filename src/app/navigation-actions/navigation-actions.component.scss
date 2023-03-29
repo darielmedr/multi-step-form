@@ -1,0 +1,39 @@
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0;
+
+  button {
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 1.5rem 3rem;
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--card-border-radius);
+  }
+
+  .back {
+    color: var(--color-neutral-cool-gray);
+    padding-left: 0;
+
+    &:is(:hover, :focus-visible) {
+      color: var(--color-primary-marine-blue);
+    }
+  }
+
+  .next {
+    background-color: var(--color-primary-marine-blue);
+    color: var(--color-neutral-white);
+
+    &:is(:hover, :focus-visible) {
+      background-color: var(--color-primary-light-marine-blue);
+      opacity: 0.9;
+
+      &.last-step {
+        background-color: var(--color-primary-purplish-blue);
+        opacity: 0.6;
+      }
+    }
+  }
+}

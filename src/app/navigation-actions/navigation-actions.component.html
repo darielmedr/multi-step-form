@@ -1,0 +1,20 @@
+<div class="actions">
+  <button
+    class="back"
+    *ngIf="showBack$ | async; else emptyButton"
+    (click)="goBack()"
+  >
+    Go Back
+  </button>
+  <button
+    class="next"
+    [class.last-step]="isLastStep$ | async"
+    (click)="goNext()"
+  >
+    {{ (isLastStep$ | async) ? "Confirm" : "Next Step" }}
+  </button>
+</div>
+
+<ng-template #emptyButton>
+  <div></div>
+</ng-template>
