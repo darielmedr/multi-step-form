@@ -60,19 +60,19 @@ export class StepperService {
   }
 
   public goNext(): void {
-    const nextStep = this.currentStep$.value + 1;
+    const currentStep = this.currentStep$.value;
 
-    if (!this.isStepLast(nextStep)) {
-      this.currentStep$.next(nextStep);
+    if (!this.isStepLast(currentStep)) {
+      this.currentStep$.next(currentStep + 1);
       this.next$.next();
     }
   }
 
   public goBack(): void {
-    const nextStep = this.currentStep$.value - 1;
+    const currentStep = this.currentStep$.value;
 
-    if (!this.isStepFirst(nextStep)) {
-      this.currentStep$.next(nextStep);
+    if (!this.isStepFirst(currentStep)) {
+      this.currentStep$.next(currentStep - 1);
       this.back$.next();
     }
   }
