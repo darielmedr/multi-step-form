@@ -35,22 +35,24 @@ export class StepperService {
     },
   ];
 
+  private next$: Subject<void> = new Subject();
+  private back$: Subject<void> = new Subject();
   private currentStep$: BehaviorSubject<number> = new BehaviorSubject(
     FIRST_STEP_VALUE
   );
 
   constructor() {}
 
+  public onNavigationNext(): Observable<void> {
+    return this.next$.asObservable();
+  }
+
+  public onNavigationBack(): Observable<void> {
+    return this.back$.asObservable();
+  }
+
   public getSteps(): Observable<Step[]> {
     return of(this.steps);
-  }
-
-  public isFirstStep(): Observable<boolean> {
-    return this.currentStep$.pipe(map((step) => step === FIRST_STEP_VALUE));
-  }
-
-  public isLastStep(): Observable<boolean> {
-    return this.currentStep$.pipe(map((step) => step === this.steps.length));
   }
 
   public setStep(value: number): void {
@@ -58,10 +60,36 @@ export class StepperService {
   }
 
   public goNext(): void {
-    this.currentStep$.next(this.currentStep$.value + 1);
+    const nextStep = this.currentStep$.value + 1;
+
+    if (!this.isStepLast(nextStep)) {
+      this.currentStep$.next(nextStep);
+      this.next$.next();
+    }
   }
 
   public goBack(): void {
-    this.currentStep$.next(this.currentStep$.value - 1);
+    const nextStep = this.currentStep$.value - 1;
+
+    if (!this.isStepFirst(nextStep)) {
+      this.currentStep$.next(nextStep);
+      this.back$.next();
+    }
+  }
+
+  public isFirstStep(): Observable<boolean> {
+    return this.currentStep$.pipe(map((step) => this.isStepFirst(step)));
+  }
+
+  public isLastStep(): Observable<boolean> {
+    return this.currentStep$.pipe(map((step) => this.isStepLast(step)));
+  }
+
+  private isStepFirst(step: number): boolean {
+    return step === FIRST_STEP_VALUE;
+  }
+
+  private isStepLast(step: number): boolean {
+    return step === this.steps.length;
   }
 }
