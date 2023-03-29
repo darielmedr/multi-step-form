@@ -5,7 +5,7 @@
   (click)="selected.emit(step.path)"
 >
   <div class="banner">{{ step.step }}</div>
-  <div class="info">
+  <div class="info" *ngIf="showInfo">
     <p class="description">{{ step.description | uppercase }}</p>
     <p class="title">{{ step.title | uppercase }}</p>
   </div>

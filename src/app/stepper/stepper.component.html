@@ -1,3 +1,7 @@
 <section class="stepper">
-  <app-step *ngFor="let step of steps$ | async" [step]="step"></app-step>
+  <app-step
+    *ngFor="let step of steps$ | async"
+    [step]="step"
+    [showInfo]="(isMinWidthTablet$ | async) ?? false"
+  ></app-step>
 </section>

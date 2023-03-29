@@ -3,10 +3,11 @@ $bannerSize: 4rem;
 $bannerFontSize: 0.5 * $bannerSize;
 
 .step {
-  width: max(30rem, 100%);
+  width: 100%;
   display: flex;
   align-items: center;
   gap: $gap;
+  padding: 1rem;
 
   &.active > .banner {
     color: var(--color-primary-marine-blue);

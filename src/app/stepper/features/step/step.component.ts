@@ -20,6 +20,7 @@ export class StepComponent {
     description: '',
     path: '',
   };
+  @Input() showInfo = false;
 
   @Output() selected: EventEmitter<string> = new EventEmitter();
 }
