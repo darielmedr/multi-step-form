@@ -8,7 +8,6 @@ import { StepperModule } from './stepper/stepper.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, StepperModule],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
