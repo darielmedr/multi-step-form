@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepperComponent } from './stepper.component';
-import { StepComponent } from './feature/step/step.component';
+import { StepComponent } from './features/step/step.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
