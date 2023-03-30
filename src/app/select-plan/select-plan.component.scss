@@ -1,3 +1,5 @@
+$gap: 2rem;
+
 :host {
   display: flex;
   flex-direction: column;
@@ -6,5 +8,13 @@
 
 .plans {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@media screen and (min-width: 1125px) {
+  .plans {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
