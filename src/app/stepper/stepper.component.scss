@@ -10,8 +10,10 @@ $padding: 3 * $gap;
   background-image: url("/assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
   padding: $padding;
+}
 
-  @media screen and (min-width: 875px) {
+@media screen and (min-width: 875px) {
+  .stepper {
     flex-direction: column;
     justify-content: flex-start;
     background-image: url("/assets/images/bg-sidebar-desktop.svg");
