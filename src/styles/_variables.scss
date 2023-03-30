@@ -22,10 +22,19 @@
   --font-weight-bold: 700;
 
   // Font Sizes
-  --font-size-text: 1.6rem;
-  --font-size-title: 4rem;
+  --font-size-text: 1.4rem;
+  --font-size-title: 3rem;
 
   // Spacing
-  --heading-bottom-spacing: 5rem;
+  --heading-bottom-spacing: 3rem;
   --card-border-radius: 8px;
+
+  @media screen and (min-width: 1125px) {
+    // Font Sizes
+    --font-size-text: 1.6rem;
+    --font-size-title: 4rem;
+
+    // Spacing
+    --heading-bottom-spacing: 5rem;
+  }
 }

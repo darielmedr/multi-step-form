@@ -9,6 +9,7 @@ $padding: 3 * $gap;
   gap: $gap;
   background-image: url("/assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
+  background-size: cover;
   padding: $padding;
 }
 
@@ -17,7 +18,6 @@ $padding: 3 * $gap;
     flex-direction: column;
     justify-content: flex-start;
     background-image: url("/assets/images/bg-sidebar-desktop.svg");
-    background-size: cover;
     border-radius: var(--card-border-radius);
   }
 }

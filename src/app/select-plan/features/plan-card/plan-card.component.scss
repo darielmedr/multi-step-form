@@ -15,7 +15,7 @@ button {
   align-items: center;
   gap: 2rem;
   width: 100%;
-  padding: $cardSpacing;
+  padding: 0.6 * $cardSpacing;
   border: solid var(--color-neutral-cool-gray) 2px;
   border-radius: $cardBorderRadius;
 
@@ -56,5 +56,6 @@ button {
     align-items: flex-start;
     width: $cardWidth;
     height: calc(1.2 * $cardWidth);
+    padding: $cardSpacing;
   }
 }

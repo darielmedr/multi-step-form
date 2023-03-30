@@ -1,34 +1,81 @@
+$stepperHeight: 30vh;
+$navigationHeight: 11rem;
+
 .wrapper {
+  position: relative;
   width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-areas:
-    "stepper content"
-    "stepper content"
-    "stepper actions";
-  grid-template-columns: 40rem 1fr;
-  gap: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-neutral-magnolia);
   overflow: hidden;
 
   app-stepper {
-    grid-area: stepper;
-    padding: 2rem;
+    width: 100%;
+    height: $stepperHeight;
   }
 
   main {
-    grid-area: content;
-    @extend .content;
+    position: absolute;
+    top: calc(0.5 * $stepperHeight);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-height: 70vh;
+    padding: 4rem 2rem;
+    background-color: var(--color-neutral-white);
+    border-radius: var(--card-border-radius);
+    overflow-y: scroll;
   }
 
   app-navigation-actions {
-    grid-area: actions;
-    align-self: flex-end;
-    @extend .content;
+    z-index: 1;
+    padding: 0 5%;
+    background-color: var(--color-neutral-white);
   }
 }
 
-.content {
-  margin: 0 auto;
-  padding: 5rem;
-  width: clamp(45rem, 100%, 75rem);
+@media screen and (min-width: 875px) {
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+      "stepper content"
+      "stepper content"
+      "stepper actions";
+    grid-template-columns: 40rem 1fr;
+    gap: 20px;
+    background-color: var(--color-neutral-white);
+
+    app-stepper {
+      grid-area: stepper;
+      height: 100%;
+      padding: 2rem;
+    }
+
+    main {
+      grid-area: content;
+      position: relative;
+      transform: translate(0);
+      top: auto;
+      left: auto;
+      width: auto;
+      height: auto;
+      overflow: initial;
+      width: clamp(40rem, 100%, 75rem);
+      margin: 0 auto;
+      border-radius: 0;
+      padding: 5rem;
+    }
+
+    app-navigation-actions {
+      grid-area: actions;
+      align-self: flex-end;
+      margin: 0 auto;
+      padding: 5rem;
+      width: clamp(40rem, 100%, 75rem);
+      z-index: unset;
+      background-color: transparent;
+    }
+  }
 }
