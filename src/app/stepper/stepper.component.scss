@@ -7,7 +7,7 @@ $padding: 3 * $gap;
   display: flex;
   justify-content: center;
   gap: $gap;
-  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  background-image: url("~src/assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: $padding;
@@ -17,7 +17,7 @@ $padding: 3 * $gap;
   .stepper {
     flex-direction: column;
     justify-content: flex-start;
-    background-image: url("./assets/images/bg-sidebar-desktop.svg");
+    background-image: url("~src/assets/images/bg-sidebar-desktop.svg");
     border-radius: var(--card-border-radius);
   }
 }
