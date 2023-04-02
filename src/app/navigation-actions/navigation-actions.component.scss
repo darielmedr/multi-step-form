@@ -1,13 +1,13 @@
 .actions {
   display: flex;
   justify-content: space-between;
-  padding: 3rem 0;
+  padding: 1.5rem 0;
 
   button {
     color: inherit;
     font-family: inherit;
     cursor: pointer;
-    padding: 1.5rem 3rem;
+    padding: 1rem 2rem;
     font-size: var(--font-size-text);
     font-weight: var(--font-weight-medium);
     border-radius: var(--card-border-radius);
@@ -34,6 +34,16 @@
         background-color: var(--color-primary-purplish-blue);
         opacity: 0.6;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1125px) {
+  .actions {
+    padding: 3rem 0;
+
+    button {
+      padding: 1.5rem 3rem;
     }
   }
 }

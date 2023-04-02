@@ -1,5 +1,5 @@
 $gap: 2rem;
-$bannerSize: 4rem;
+$bannerSize: 3.8rem;
 $bannerFontSize: 0.5 * $bannerSize;
 
 .step {
@@ -32,6 +32,7 @@ $bannerFontSize: 0.5 * $bannerSize;
     display: flex;
     flex-direction: column;
     gap: calc(0.3 * $gap);
+    font-size: 0.8em;
     .description {
       color: var(--color-neutral-cool-gray);
     }

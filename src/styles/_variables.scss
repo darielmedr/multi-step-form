@@ -23,7 +23,7 @@
 
   // Font Sizes
   --font-size-text: 1.4rem;
-  --font-size-title: 3rem;
+  --font-size-title: 2.3rem;
 
   // Spacing
   --heading-bottom-spacing: 3rem;
@@ -32,9 +32,9 @@
   @media screen and (min-width: 1125px) {
     // Font Sizes
     --font-size-text: 1.6rem;
-    --font-size-title: 4rem;
+    --font-size-title: 3rem;
 
     // Spacing
-    --heading-bottom-spacing: 5rem;
+    --heading-bottom-spacing: 3rem;
   }
 }

@@ -1,5 +1,3 @@
-$gap: 2rem;
-
 :host {
   display: flex;
   flex-direction: column;
@@ -7,9 +5,17 @@ $gap: 2rem;
 }
 
 .plans {
+  --gap: 2rem;
+
   display: flex;
   flex-direction: column;
-  gap: $gap;
+  gap: var(--gap);
+}
+
+@media screen and (min-width: 875px) {
+  .plans {
+    --gap: 3rem;
+  }
 }
 
 @media screen and (min-width: 1125px) {

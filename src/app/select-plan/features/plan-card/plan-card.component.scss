@@ -1,8 +1,6 @@
 $gap: 0.3rem;
-$logoSize: 6rem;
 $cardWidth: 20rem;
 $cardSpacing: 0.125 * $cardWidth;
-$cardBorderRadius: 8px;
 
 button {
   box-sizing: border-box;
@@ -13,18 +11,19 @@ button {
 .card {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.8rem;
   width: 100%;
-  padding: 0.6 * $cardSpacing;
+  padding: 0.5 * $cardSpacing;
   border: solid var(--color-neutral-cool-gray) 2px;
-  border-radius: $cardBorderRadius;
+  border-radius: var(--card-border-radius);
 
   &.selected {
     border-color: var(--color-primary-marine-blue);
   }
 
   .logo {
-    width: $logoSize;
+    --logoSize: 4rem;
+    width: var(--logoSize);
   }
 
   .info {
@@ -35,16 +34,15 @@ button {
 
     .plan-name {
       font-weight: var(--font-weight-bold);
-      font-size: 1.5em;
+      font-size: 1.1em;
     }
 
     .price {
       color: var(--color-neutral-cool-gray);
-      font-size: 1.2em;
     }
 
     .discountInfo {
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
   }
 }
@@ -57,5 +55,25 @@ button {
     width: $cardWidth;
     height: calc(1.2 * $cardWidth);
     padding: $cardSpacing;
+
+    .logo {
+      --logoSize: 6rem;
+    }
+
+    .info {
+      .plan-name {
+        font-weight: var(--font-weight-bold);
+        font-size: 1.5em;
+      }
+
+      .price {
+        color: var(--color-neutral-cool-gray);
+        font-size: 1.2em;
+      }
+
+      .discountInfo {
+        font-size: 0.9em;
+      }
+    }
   }
 }

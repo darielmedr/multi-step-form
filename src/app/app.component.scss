@@ -1,7 +1,8 @@
 $stepperHeight: 30vh;
-$navigationHeight: 11rem;
 
 .wrapper {
+  --spacing: 2rem;
+
   position: relative;
   width: 100%;
   height: 100vh;
@@ -18,12 +19,12 @@ $navigationHeight: 11rem;
 
   main {
     position: absolute;
-    top: calc(0.5 * $stepperHeight);
+    top: calc(0.55 * $stepperHeight);
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     max-height: 70vh;
-    padding: 4rem 2rem;
+    padding: calc(2 * var(--spacing)) var(--spacing);
     background-color: var(--color-neutral-white);
     border-radius: var(--card-border-radius);
     overflow-y: scroll;
@@ -38,18 +39,19 @@ $navigationHeight: 11rem;
 
 @media screen and (min-width: 875px) {
   .wrapper {
+    --spacing: 4.5rem;
+
     display: grid;
     grid-template-areas:
       "stepper content"
       "stepper content"
       "stepper actions";
-    grid-template-columns: 40rem 1fr;
-    gap: 20px;
+    grid-template-columns: 35rem 1fr;
     background-color: var(--color-neutral-white);
 
     app-stepper {
       grid-area: stepper;
-      height: 100%;
+      height: 100vh;
       padding: 2rem;
     }
 
@@ -57,22 +59,21 @@ $navigationHeight: 11rem;
       grid-area: content;
       position: relative;
       transform: translate(0);
-      top: auto;
-      left: auto;
-      width: auto;
-      height: auto;
-      overflow: initial;
+      top: initial;
+      left: initial;
+      height: initial;
       width: clamp(40rem, 100%, 75rem);
+      overflow: initial;
       margin: 0 auto;
       border-radius: 0;
-      padding: 5rem;
+      padding: var(--spacing);
     }
 
     app-navigation-actions {
       grid-area: actions;
       align-self: flex-end;
       margin: 0 auto;
-      padding: 5rem;
+      padding: var(--spacing);
       width: clamp(40rem, 100%, 75rem);
       z-index: unset;
       background-color: transparent;
