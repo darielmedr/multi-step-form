@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, of, Subject } from 'rxjs';
+import {
+  BehaviorSubject,
+  combineLatest,
+  map,
+  Observable,
+  of,
+  Subject,
+} from 'rxjs';
 import { Step } from '../models/step.model';
 
 const FIRST_STEP_VALUE = 1;
@@ -53,6 +60,12 @@ export class StepperService {
 
   public getSteps(): Observable<Step[]> {
     return of(this.steps);
+  }
+
+  public getStepPath(): string {
+    const currentStep = this.currentStep$.value;
+    const { path } = this.steps[currentStep - 1];
+    return path;
   }
 
   public setStep(value: number): void {
