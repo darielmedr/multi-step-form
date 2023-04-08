@@ -22,5 +22,5 @@ export class StepComponent {
   };
   @Input() showInfo = false;
 
-  @Output() selected: EventEmitter<string> = new EventEmitter();
+  @Output() selected: EventEmitter<Step> = new EventEmitter();
 }

@@ -2,7 +2,7 @@
   class="step"
   [routerLink]="[step.path]"
   routerLinkActive="active"
-  (click)="selected.emit(step.path)"
+  (click)="selected.emit(step)"
 >
   <div class="banner">{{ step.step }}</div>
   <div class="info" *ngIf="showInfo">
